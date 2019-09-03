@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb-nfs
+spec:
+  containers:
+  - image: mongo
+    name: mongodb
+    volumeMounts:
+    - name: nfs-data               #挂载的卷名，与上面的mongodb-data保持一致
+      mountPath: /data/db          #MongoDB数据存放的路径
+    ports:
+    - containerPort: 27017
+      protocol: TCP
+  volumes:
+  - name: nfs-data                 #卷名
+    nfs:
+      server: 172.27.9.181         #nfs服务器ip
+      path: /backup                #nfs服务器对外提供的共享目录

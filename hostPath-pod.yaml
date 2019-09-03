@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: prod 
+  name: hostpath-nginx 
+spec:
+  containers:
+  - image: nginx 
+    name: nginx 
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html   #容器挂载点 
+      name: nginx-volume                 #挂载卷nginx-volume
+  volumes:
+  - name: nginx-volume                   #卷名
+    hostPath:
+      path: /data                        #准备挂载的node上的文件系统

@@ -1,0 +1,12 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mypvc                       #声明的名称，当做pod的卷使用时会用到                          
+spec:
+  accessModes:
+    - ReadWriteOnce                 #访问卷模式，筛选PV条件之一
+  volumeMode: Filesystem            #卷模式，与PV保持一致，指示将卷作为文件系统或块设备使用
+  resources:                        #声明可以请求特定数量的资源,筛选PV条件之一
+    requests:
+      storage: 2Gi
+  storageClassName: nfs             #请求特定的类，与PV保持一致，否则无法完成绑定
