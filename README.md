@@ -1,4 +1,4 @@
-#k8s实践(七)：存储卷和数据持久化(Volumes and Persistent Storage)
+# k8s实践(七)：存储卷和数据持久化(Volumes and Persistent Storage)
 
 <br>
 
@@ -79,13 +79,3 @@ https://blog.51cto.com/3241766/2431728
 
 
 
-
-
-
-
-<br>
-<br>
-
-**详细搭建过程及测试：**
-
-https://blog.51cto.com/3241766/2431728
